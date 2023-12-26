@@ -16,6 +16,8 @@ export default function MusicianList() {
   const [styleFilters, setStyleFilters] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
 
+
+
   const toggleFilters = () => {
     setShowFilters(!showFilters);
   };

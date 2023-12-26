@@ -28,3 +28,18 @@ export async function getMusicianById(id: string): Promise<Musicien | null> {
   const musicians = await getMusicians();
   return musicians.find((musicien) => musicien.id === parseInt(id, 10)) || null;
 }
+
+
+export async function addMusician(newMusician: Musicien): Promise<Musicien[]> {
+  try {
+    const musicians = await getMusicians();
+    const updatedMusicians = [...musicians, newMusician];
+
+    await fs.writeFile(DB_FILE_PATH, JSON.stringify({ musiciens: updatedMusicians }, null, 2), 'utf-8');
+
+    return updatedMusicians;
+  } catch (error) {
+    console.error('Erreur lors de l\'ajout du musicien.', error);
+    return [];
+  }
+}

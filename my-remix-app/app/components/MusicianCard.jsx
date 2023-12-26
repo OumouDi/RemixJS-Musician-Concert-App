@@ -6,9 +6,9 @@ import { Link } from '@remix-run/react';
 function MusicianCard({ music }) {
   return (
     <div
-      className="bg-white p-6 rounded-lg shadow-md text-center transform transition-transform hover:scale-105 focus:outline-none focus:ring focus:border-blue-300"
+      className="bg-white p-6 rounded-lg shadow-md text-center transform transition-transform hover:scale-105 focus:outline-none focus:ring focus:border-blue-300 mb-4"
     >
-      <h2 className="text-xl font-bold mb-2 mb-4">{music.name}</h2>
+      <h2 className="text-xl font-bold mb-4">{music.name}</h2>
       <div className="mb-2">
         {Array.isArray(music.style) ? (
           music.style.map((style, index) => (
