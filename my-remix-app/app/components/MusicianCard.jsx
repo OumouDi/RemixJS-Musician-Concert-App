@@ -29,7 +29,7 @@ function MusicianCard({ music }) {
         <strong>Instruments:</strong>{' '}
         {Array.isArray(music.instrument) ? music.instrument.join(', ') : music.instrument}
       </p>
-      <Link to={`/musicien/${music.id}`} className="text-white bg-blue-500 mt-4 block p-2 rounded-md hover:bg-blue-600">
+      <Link to={`/musician/${music.id}`} className="text-white bg-blue-500 mt-4 block p-2 rounded-md hover:bg-blue-600">
         Voir le profil
       </Link>
     </div>
