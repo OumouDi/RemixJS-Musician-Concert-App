@@ -4,7 +4,7 @@ import { useLoaderData } from "@remix-run/react";
 import { getMusicianById } from "../models/musicien.server";
 import Navbar from "../components/Navbar";
 import backgroundImage from "../../public/images/background.jpg";
-import { Link } from "react-router-dom";
+import { Link } from "@remix-run/react";
 import profilPicture from "../../public/images/profilPicture.png";
 
 export const loader = async ({ params }: LoaderArgs) => {
