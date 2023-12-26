@@ -24,3 +24,9 @@ export async function getConcerts(): Promise<Concert[]> {
     return [];
   }
 }
+
+
+export async function getConcertById(id: string): Promise<Concert | null> {
+  const concerts = await getConcerts();
+  return concerts.find((concert) => concert.id === parseInt(id, 10)) || null;
+}
