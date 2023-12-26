@@ -24,3 +24,7 @@ export async function getMusicians(): Promise<Musicien[]> {
   }
 }
 
+export async function getMusicienById(id: string): Promise<Musicien | null> {
+  const musiciens = await getMusicians();
+  return musiciens.find((musicien) => musicien.id === parseInt(id, 10)) || null;
+}
