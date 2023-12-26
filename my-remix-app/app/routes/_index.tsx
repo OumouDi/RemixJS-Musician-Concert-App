@@ -1,5 +1,6 @@
 import { Link } from "@remix-run/react";
 import backgroundImage from "../../public/images/background.jpg";
+import Navbar from "../components/Navbar";
 
 export default function Index() {
   return (
@@ -7,6 +8,7 @@ export default function Index() {
       className="flex flex-col items-center h-screen bg-cover bg-no-repeat bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
+      <Navbar />
       <div className="flex items-center justify-center h-screen">
         <div className="text-white text-center mt-4">
           <h1 className="text-4xl font-bold mb-8">Bienvenue !</h1>
