@@ -24,13 +24,8 @@ export default function NewMusician() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (
-      formData.address.street.length === 0 ||
-      formData.address.city.length === 0 ||
-      !formData.date ||
-      !formData.style
-    ) {
-      setFormError("Tous les champs doivent être remplis.");
+    if (!formData.name || formData.instrument.length === 0 || formData.style.length === 0) {
+      setFormError('Tous les champs doivent être remplis.');
       return;
     }
 
@@ -71,7 +66,7 @@ export default function NewMusician() {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="street">
             Instruments :
           </label>
           <div className="flex flex-wrap">
@@ -91,7 +86,7 @@ export default function NewMusician() {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="style">
             Styles :
           </label>
           <div className="flex flex-wrap">

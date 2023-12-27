@@ -15,14 +15,14 @@ export default function NewConcert() {
   const [formError, setFormError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  const handleCheckboxChange = (type, value) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [type]: prevData[type].includes(value)
-        ? prevData[type].filter((item) => item !== value)
-        : [...prevData[type], value],
-    }));
-  };
+const handleCheckboxChange = (type: string, value: string) => {
+  setFormData((prevData) => ({
+    ...prevData,
+    [type]: prevData[type].includes(value)
+      ? prevData[type].filter((item) => item !== value)
+      : [...prevData[type], value],
+  }));
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,6 +36,7 @@ export default function NewConcert() {
     }
 
     try {
+      console.log("Données du formulaire avant envoi :", formData);
       const response = await fetch("/new-concert", {
         method: "POST",
         headers: {
@@ -66,7 +67,7 @@ export default function NewConcert() {
             className="block text-gray-700 font-bold mb-2"
             htmlFor="street"
           >
-            Rue :
+            Adresse :
           </label>
           <input
             type="text"
@@ -122,7 +123,7 @@ export default function NewConcert() {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Styles :</label>
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="date">Styles :</label>
           <div className="flex flex-wrap">
             {[
               "Rock",

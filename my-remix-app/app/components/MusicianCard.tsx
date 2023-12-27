@@ -1,8 +1,12 @@
-
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 import { Link } from '@remix-run/react';
+import { Musicien } from '../models/musicien.server';
 
-function MusicianCard({ music }) {
+interface MusicianCardProps {
+  music: Musicien;
+}
+
+function MusicianCard({ music }: MusicianCardProps) {
   return (
     <div
       className="bg-white p-6 rounded-lg shadow-md text-center transform transition-transform hover:scale-105 focus:outline-none focus:ring focus:border-blue-300 mb-4"
@@ -10,7 +14,7 @@ function MusicianCard({ music }) {
       <h2 className="text-xl font-bold mb-4">{music.name}</h2>
       <div className="mb-2">
         {Array.isArray(music.style) ? (
-          music.style.map((style, index) => (
+          music.style.map((style: string, index: number) => (
             <span
               key={index}
               className="bg-black text-white px-2 py-1 rounded-md inline-block mr-2 mb-2"
@@ -26,14 +30,20 @@ function MusicianCard({ music }) {
       </div>
       <p className="text-gray-700">
         <strong>Instruments:</strong>{' '}
-        {Array.isArray(music.instrument) ? music.instrument.join(', ') : music.instrument}
+        {Array.isArray(music.instrument)
+          ? (music.instrument as string[]).join(', ')
+          : music.instrument}
       </p>
-      <Link to={`/musician/${music.id}`} className="text-white bg-blue-500 mt-4 block p-2 rounded-md hover:bg-blue-600">
+      <Link
+        to={`/musician/${music.id}`}
+        className="text-white bg-blue-500 mt-4 block p-2 rounded-md hover:bg-blue-600"
+      >
         Voir le profil
       </Link>
     </div>
   );
 }
+
 
 MusicianCard.propTypes = {
   music: PropTypes.shape({

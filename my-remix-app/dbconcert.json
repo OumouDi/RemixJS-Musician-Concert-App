@@ -1,0 +1,110 @@
+{
+  "concerts": [
+    {
+      "id": 1,
+      "style": "Pop",
+      "address": {
+        "street": "789 Rue du Pin",
+        "city": "Paris"
+      },
+      "date": "2024-01-20T19:15"
+    },
+    {
+      "id": 2,
+      "style": "Funk",
+      "address": {
+        "street": "101 Rue de l'Érable",
+        "city": "Lyon"
+      },
+      "date": "2024-03-15T21:00"
+    },
+    {
+      "id": 3,
+      "style": "Blues",
+      "address": {
+        "street": "222 Rue du Frêne",
+        "city": "Rouen"
+      },
+      "date": "2024-07-10T18:45"
+    },
+    {
+      "id": 4,
+      "style": "Rock",
+      "address": {
+        "street": "123 Rue Principale",
+        "city": "Marseille"
+      },
+      "date": "2024-01-02T18:00"
+    },
+    {
+      "id": 5,
+      "style": "Jazz",
+      "address": {
+        "street": "456 Rue du Chêne",
+        "city": "Bordeaux"
+      },
+      "date": "2024-02-15T20:30"
+    },
+    {
+      "id": 6,
+      "style": "Pop",
+      "address": {
+        "street": "789 Rue du Pin",
+        "city": "Paris"
+      },
+      "date": "2024-01-20T19:15"
+    },
+    {
+      "id": 7,
+      "style": "Funk",
+      "address": {
+        "street": "101 Rue de l'Érable",
+        "city": "Lyon"
+      },
+      "date": "2024-03-15T21:00"
+    },
+    {
+      "id": 8,
+      "style": "Blues",
+      "address": {
+        "street": "222 Rue du Frêne",
+        "city": "Rouen"
+      },
+      "date": "2024-07-10T18:45"
+    },
+    {
+      "id": 9,
+      "style": "Rock",
+      "address": {
+        "street": "123 Rue Principale",
+        "city": "Marseille"
+      },
+      "date": "2024-01-02T18:00"
+    },
+    {
+      "id": 10,
+      "style": "Jazz",
+      "address": {
+        "street": "456 Rue du Chêne",
+        "city": "Bordeaux"
+      },
+      "date": "2024-02-15T20:30"
+    },
+    {
+      "id": 12,
+      "style": [
+        "RnB"
+      ],
+      "date": "2025-05-27",
+      "address": {}
+    },
+    {
+      "id": 12,
+      "style": [
+        "Rock"
+      ],
+      "date": "2025-05-27",
+      "address": {}
+    }
+  ]
+}

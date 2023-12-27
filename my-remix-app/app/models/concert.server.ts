@@ -1,8 +1,10 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-const DB_FILE_PATH = path.resolve(process.cwd(), 'db.json');
+// Chemin du fichier JSON utilisé comme BDD
+const DB_FILE_PATH = path.resolve(process.cwd(), 'dbconcert.json');
 
+// Définition du type Concert
 export type Concert = {
   id: number;
   style: string | string[];
@@ -13,11 +15,11 @@ export type Concert = {
   date: string;
 };
 
+//  pour récupérer la liste des concerts depuis le fichier JSON
 export async function getConcerts(): Promise<Concert[]> {
   try {
     const data = await fs.readFile(DB_FILE_PATH, 'utf-8');
     const jsonData = JSON.parse(data);
-
     return jsonData.concerts || [];
   } catch (error) {
     console.error('Erreur lors de la lecture des concerts depuis le fichier JSON.', error);
@@ -25,20 +27,29 @@ export async function getConcerts(): Promise<Concert[]> {
   }
 }
 
+//  récupérer le détail d'un concert 
 
 export async function getConcertById(id: string): Promise<Concert | null> {
-  const concerts = await getConcerts();
-  return concerts.find((concert) => concert.id === parseInt(id, 10)) || null;
+  try {
+
+    const concerts = await getConcerts();
+    // Recherche du concert par son id
+    return concerts.find((concert) => concert.id === parseInt(id, 10)) || null;
+  } catch (error) {
+    console.error('Erreur lors de la récupération des concerts pour getConcertById.', error);
+    throw error;
+  }
 }
 
 
+// pour ajouter un concert à la liste existante et l'inclute  dans le fichier JSON
 export async function addConcert(newConcerts: Concert[], filePath: string = DB_FILE_PATH): Promise<void> {
   try {
-    console.log('Adding concert to the JSON file...');
+    console.log('Ajout du concert dans le fichier JSON...');
     await fs.writeFile(filePath, JSON.stringify({ concerts: newConcerts }, null, 2), 'utf-8');
-    console.log('Concert added successfully to the JSON file.');
+    console.log('Concert ajouté avec succès dans le fichier JSON.');
   } catch (error) {
-    console.error('Error adding concert.', error);
-    throw error; // Rethrow the error to be caught by the calling function
+    console.error('Erreur lors de l\'ajout du concert.', error);
+    throw error;
   }
 }

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { json } from '@remix-run/node';
 import { useLoaderData , Link } from '@remix-run/react';
+
 import { getMusicians, Musicien } from '../models/musicien.server';
 import MusicienCard from '../components/MusicianCard';
 import musicienBackgrundImage from '../../public/images/background.jpg';

@@ -1,10 +1,10 @@
 import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData , Link } from "@remix-run/react";
 import { getMusicianById } from "../models/musicien.server";
 import Navbar from "../components/Navbar";
 import backgroundImage from "../../public/images/background.jpg";
-import { Link } from "@remix-run/react";
+
 import profilPicture from "../../public/images/profilPicture.png";
 
 export const loader = async ({ params }: LoaderArgs) => {

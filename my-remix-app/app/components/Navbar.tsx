@@ -28,7 +28,6 @@ export default function Navbar() {
             Concerts
           </Link>
         </li>
-     
       </ul>
     </nav>
   );

@@ -18,7 +18,7 @@ export async function action({ request }) {
     const rawData = await request.text();
     const musicianData = JSON.parse(rawData);
 
-    const dbFilePath = path.join(process.cwd(), 'db.json');
+    const dbFilePath = path.join(process.cwd(), 'dbmusician.json');
     const existingMusicians = await getMusicians(dbFilePath);
     const newMusicianId = existingMusicians.length + 1;
 

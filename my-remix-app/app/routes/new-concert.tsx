@@ -18,7 +18,7 @@ export async function action({ request }) {
     const rawData = await request.text();
     const concertData = JSON.parse(rawData);
 
-    const dbFilePath = path.join(process.cwd(), 'db.json');
+    const dbFilePath = path.join(process.cwd(), 'dbconcert.json');
     const existingConcerts = await getConcerts(dbFilePath);
     const newConcertId = existingConcerts.length + 1;
 
@@ -26,8 +26,10 @@ export async function action({ request }) {
       id: newConcertId ,
       style: concertData.style,
       date: concertData.date,
-      street: concertData.address.street, 
-      city: concertData.address.city,
+      address: {
+        street: concertData.street,
+        city: concertData.city,
+      },
     };
 
     console.log('New Musician Data:', newConcert);

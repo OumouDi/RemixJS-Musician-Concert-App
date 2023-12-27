@@ -1,0 +1,110 @@
+{
+  "musiciens": [
+    {
+      "id": 1,
+      "name": "Anna Smith",
+      "instrument": [
+        "Piano",
+        "Flute"
+      ],
+      "style": [
+        "Classique",
+        "Jazz"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Michael Jo",
+      "instrument": [
+        "Saxophone",
+        "Trombone"
+      ],
+      "style": [
+        "Jazz",
+        "Funk"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Sophie White",
+      "instrument": [
+        "Guitare",
+        "Violon"
+      ],
+      "style": [
+        "Classique",
+        "Pop"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "John Dee",
+      "instrument": [
+        "Basse",
+        "Batterie"
+      ],
+      "style": [
+        "Jazz",
+        "Blues",
+        "Rock"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Mathilde Cole",
+      "instrument": [
+        "Guitare",
+        "Basse",
+        "Batterie"
+      ],
+      "style": [
+        "Classique",
+        "Blues",
+        "Rap"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Jane Turner",
+      "instrument": [
+        "Violon",
+        "Piano"
+      ],
+      "style": [
+        "Rnb",
+        "Blues",
+        "Rap"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "test4",
+      "instrument": [
+        "Basse"
+      ],
+      "style": [
+        "Blues"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Jean",
+      "instrument": [
+        "Basse"
+      ],
+      "style": [
+        "Jazz"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Ali",
+      "instrument": [
+        "Batterie"
+      ],
+      "style": [
+        "Rock"
+      ]
+    }
+  ]
+}
