@@ -24,8 +24,13 @@ export default function NewMusician() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.name || formData.instrument.length === 0 || formData.style.length === 0) {
-      setFormError('Tous les champs doivent être remplis.');
+    if (
+      formData.address.street.length === 0 ||
+      formData.address.city.length === 0 ||
+      !formData.date ||
+      !formData.style
+    ) {
+      setFormError("Tous les champs doivent être remplis.");
       return;
     }
 

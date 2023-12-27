@@ -1,4 +1,3 @@
-// MusicienCard.js
 
 import PropTypes from 'prop-types'; 
 import { Link } from '@remix-run/react';

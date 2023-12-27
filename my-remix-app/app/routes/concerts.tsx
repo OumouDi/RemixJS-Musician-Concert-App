@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData , Link} from "@remix-run/react";
 import { getConcerts, Concert } from "../models/concert.server";
 import ConcertCard from "../components/ConcertCard";
 import concertBackgrundImage from "../../public/images/background.jpg";
+
 
 export const loader = async () => {
   return json({ concerts: await getConcerts() });
@@ -49,7 +50,11 @@ export default function ConcertList() {
       <h1 className="text-3xl font-bold mt-8 mb-8 text-white">
         Liste des concerts à venir
       </h1>
-
+      <Link to="/new-concert">
+        <button  className="text-white bg-green-500 px-4 py-2 rounded-md mt-4 mb-6">
+         + Créer un nouveau concert
+        </button>
+      </Link>
       <div className="flex items-center justify-between mb-8">
         <button
           onClick={toggleFilters}
@@ -98,7 +103,7 @@ export default function ConcertList() {
           <p className="text-white text-center">Aucun concert trouvé.</p>
         ) : (
           filteredConcerts.map((concert) => (
-            <ConcertCard key={concert.id} concert={concert} />
+            <ConcertCard key={concert.id} concert={concert}   />
           ))
         )}
       </div>
