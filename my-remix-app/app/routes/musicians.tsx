@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { json } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import { useLoaderData , Link } from '@remix-run/react';
+
 import { getMusicians, Musicien } from '../models/musicien.server';
 import MusicienCard from '../components/MusicianCard';
 import musicienBackgrundImage from '../../public/images/background.jpg';
+
 
 export const loader = async () => {
   return json({ musiciens: await getMusicians() });
@@ -52,7 +54,11 @@ export default function MusicianList() {
     <div className="flex flex-col items-center min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${musicienBackgrundImage})` }}>
       <Navbar />
       <h1 className="text-3xl font-bold mt-8 mb-8 text-white">Profils de musiciens</h1>
-
+      <Link to="/new-musician">
+        <button  className="text-white bg-green-500 px-4 py-2 rounded-md mt-4 mb-6">
+         + Créer un nouveau profil musicien
+        </button>
+      </Link>
       <button onClick={toggleFilters} className="text-white bg-blue-500 px-4 py-2 rounded-md">
         {showFilters ? 'Masquer les filtres' : 'Filtrer les musiciens'}
       </button>
